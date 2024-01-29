@@ -42,3 +42,10 @@ test <- function(train_a,fita,a){
   Box.test(res_a,fitdf=df_a,lag=lag_a,type="Ljung-Box")
 }
 
+
+#ets
+fit1 <- ets(train_b)
+summary(fit1)
+
+test(train_b,fit1,24)
+
