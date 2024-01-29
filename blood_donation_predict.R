@@ -13,3 +13,11 @@ blood_ts |> decompose() |> autoplot()
 train_b <- window(blood_ts,end=c(2019,12))
 test_b <- window(blood_ts,start=c(2020,1))
 
+
+(lamb <- BoxCox.lambda(train_b))
+autoplot(train_b)
+train_b1 <- train_b |> BoxCox(lambda = lamb)
+train_b1 |> autoplot()
+train_b2 <- train_b |> BoxCox(lambda = 0)
+train_b2 |> autoplot()
+
