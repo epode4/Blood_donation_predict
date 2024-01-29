@@ -37,3 +37,30 @@
 - 최적 람다값 = 1.18
 - 람다값은 1에 가까운 값을 보이며 그래프는 진폭이 크게 변환하지 않는다 판단되어 분산 안정화 불필요
 
+--- 
+
+## ETS 모형 적합 
+<p align = "center"><img src = "assets/ets_2.png" width="500"></p>
+<p align = "center"> 최적 AICc를 기준으로 적합된 ETS 모형 </p>
+
+- Trend(추세) : X / Additive seasonal(계절성) : O / multiplicative error : O
+- alpha 값이 0.2963으로 평균에 큰 변동은 존재하지 않음
+- gamma 값이 0.0001로 0에 매우 가까워 계절성에 변동이 거의 존재하지 않음
+
+<br>
+
+<ETS 모형 오차 가정 만족 확인>
+<p align = "center"><img src = "assets/ets_1.png" width="500"></p>
+<p align = "center"> ETS 모형 시계열, ACF 그래프, 히스토그램 </p>
+
+<p align = "center"><img src = "assets/ets_3.png" width="500"></p>
+<p align = "center"> ETS 모형 Ljung-Box 검정 결과 </p>
+
+- 시계열 그래프 : 0을 중심으로 위아래로 랜덤 분포, 별다른 추세나 계절성 X
+- ACF 그래프 : 3시점, 7시점 이외에는 신뢰구간 안에 분포하여 해당 시점들은 이상값으로 판단
+- 히스토그램 : 평균 0을 중심으로 대칭 분포
+- p-value : 알파값 0.05보다 작으므로 귀무가설 기각
+
+- Ljung-Box 검정은 가정을 만족하지 않지만 다른 그래프들을 살펴보았을 때 가정을 만족하므로 **오차 가정을 만족하지 않는다 판단하기에는 어려움이 있음**
+
+  
