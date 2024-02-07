@@ -55,3 +55,9 @@ ggtsdisplay(train_b)
 ndiffs(train_b)
 nsdiffs(train_b)
 
+
+
+train_b1 <- train_b |> diff()
+train_b1 |> ggtsdisplay()
+#비정상 자료로 진행 X
+
