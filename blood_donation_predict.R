@@ -61,3 +61,9 @@ train_b1 <- train_b |> diff()
 train_b1 |> ggtsdisplay()
 #비정상 자료로 진행 X
 
+
+train_b2 <- train_b |> diff(lag=12)
+train_b2 |> ggtsdisplay()
+train_b2_1 <- train_bl |> diff()
+train_b2_1 |> ggtsdisplay()
+
