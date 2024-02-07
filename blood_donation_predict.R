@@ -49,3 +49,9 @@ summary(fit1)
 
 test(train_b,fit1,24)
 
+
+#arima
+ggtsdisplay(train_b)
+ndiffs(train_b)
+nsdiffs(train_b)
+
