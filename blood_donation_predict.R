@@ -67,3 +67,9 @@ train_b2 |> ggtsdisplay()
 train_b2_1 <- train_bl |> diff()
 train_b2_1 |> ggtsdisplay()
 
+
+
+fit2 <- auto.arima(train_b,d=1,D=1,stepwise = FALSE)
+summary(fit2)
+checkresiduals(fit2)
+
