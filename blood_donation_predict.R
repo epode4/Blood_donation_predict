@@ -64,7 +64,7 @@ train_b1 |> ggtsdisplay()
 
 train_b2 <- train_b |> diff(lag=12)
 train_b2 |> ggtsdisplay()
-train_b2_1 <- train_bl |> diff()
+train_b2_1 <- train_b2 |> diff()
 train_b2_1 |> ggtsdisplay()
 
 
