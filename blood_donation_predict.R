@@ -73,3 +73,11 @@ fit2 <- auto.arima(train_b,d=1,D=1,stepwise = FALSE)
 summary(fit2)
 checkresiduals(fit2)
 
+
+#regression
+Time <- time(train_b)
+Month <- seasonaldummy(train_b)
+
+fit3 <- auto.arima(train_b,stepwise = FALSE,
+                   xreg=cbind(Time,Month))
+summary(fit3)
