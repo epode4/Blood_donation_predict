@@ -87,3 +87,16 @@ fit3_1 <- Arima(train_b,order=c(3,0,0),seasonal=c(2,0,0),
                 include.mean = TRUE,xreg=cbind(Time,Month))
 summary(fit3_1)
 
+
+fit3_2 <- Arima(train_b,order=c(3,0,0),seasonal=c(2,0,0),
+                include.mean = TRUE,xreg=cbind(Time,Month),
+                fixed=c(NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA))
+summary(fit3_2)
+
+c(fit3_1$aicc,fit3_2$aicc)
+
+checkresiduals(fit3_2)
+pchisq(26.002,df=19-13,lower.tail = FALSE)
+
+four(train_b)
+
