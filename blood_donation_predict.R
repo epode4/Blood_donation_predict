@@ -115,4 +115,16 @@ e1_1 <- autoplot(fc1,include = 10)+
 e1/e1_1
 
 
+#arima
+
+fc2 <- forecast(fit2,h=length(test_b))
+accuracy(fc2,test_b)
+
+a1 <- autoplot(fc2)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc2")
+a1_1 <- autoplot(fc2,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc2")
+a1/a1_1
 
