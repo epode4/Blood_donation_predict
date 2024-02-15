@@ -100,3 +100,19 @@ pchisq(26.002,df=19-13,lower.tail = FALSE)
 
 four(train_b)
 
+#예측 진행 비교
+#ets
+
+fc1 <- forecast(fit1,h=length(test_b))
+accuracy(fc1,test_b)
+
+e1 <- autoplot(fc1)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc1")
+e1_1 <- autoplot(fc1,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc1")
+e1/e1_1
+
+
+
