@@ -144,3 +144,20 @@ r1_1 <- autoplot(fc3,include = 10)+
   labs(y=NULL,subtitle = "fc3")
 r1/r1_1
 
+
+e1_1 <- autoplot(fc1,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc1")+ylim(27000,84000)
+a2_1 <- autoplot(fc2,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc2")+ylim(27000,84000)
+r1_1 <- autoplot(fc3,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc3")+ylim(27000,84000)
+e1_1/a1_1/r1_1
+
+
+accuracy(fc1,test_b)
+accuracy(fc2,test_b)
+accuracy(fc3,test_b)
+
