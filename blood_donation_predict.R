@@ -128,3 +128,19 @@ a1_1 <- autoplot(fc2,include = 10)+
   labs(y=NULL,subtitle = "fc2")
 a1/a1_1
 
+
+#regression
+
+fc3 <- forecast(fit3_2,
+                xreg=cbind(Time=time(test_b),
+                           Month=seasonaldummy(test_b)))
+accuracy(fc3,test_b)
+
+r1 <- autoplot(fc3)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc3")
+r1_1 <- autoplot(fc3,include = 10)+
+  autolayer(test_b,color="red",size=1)+
+  labs(y=NULL,subtitle = "fc3")
+r1/r1_1
+
