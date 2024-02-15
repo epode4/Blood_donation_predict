@@ -81,3 +81,9 @@ Month <- seasonaldummy(train_b)
 fit3 <- auto.arima(train_b,stepwise = FALSE,
                    xreg=cbind(Time,Month))
 summary(fit3)
+
+
+fit3_1 <- Arima(train_b,order=c(3,0,0),seasonal=c(2,0,0),
+                include.mean = TRUE,xreg=cbind(Time,Month))
+summary(fit3_1)
+
